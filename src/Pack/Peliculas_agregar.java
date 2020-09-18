@@ -1,21 +1,29 @@
 package Pack;
-
 import javax.swing.JPanel;
+
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.DefaultListModel;
 
 public class Peliculas_agregar extends JPanel {
+	
 	private JTextField textField;
-
+	private  DefaultListModel<Genero_pelicula> listModel;
+	private JComboBox comboBox;
 	Genero_pelicula genero_1;
 	Genero_pelicula genero_2;
 	Genero_pelicula genero_3;
 	Genero_pelicula genero_4;
 	Genero_pelicula genero_5;
+	Genero_pelicula genero_6;
+
 	
 	public Peliculas_agregar() {
 		
@@ -48,6 +56,19 @@ public class Peliculas_agregar extends JPanel {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				if(!textField.getText().isEmpty() && comboBox.getSelectedItem().toString()!=genero_1.getNombre())
+				{
+					Genero_pelicula genero = new Genero_pelicula(textField.getText());
+					
+					listModel.addElement(genero);
+					
+					textField.setText("");
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "No se selecciono un genero o no se agrego nombre de pelicula");
+					
+				}
+			
 				
 				
 			}
@@ -55,7 +76,7 @@ public class Peliculas_agregar extends JPanel {
 		btnNewButton.setBounds(71, 147, 113, 31);
 		add(btnNewButton);
 		
-		JComboBox comboBox = new JComboBox();
+	 comboBox = new JComboBox();
 		comboBox.setBounds(203, 97, 125, 20);
 		add(comboBox);
 		
@@ -64,17 +85,24 @@ public class Peliculas_agregar extends JPanel {
 		comboBox.addItem(genero_3);
 		comboBox.addItem(genero_4);
 		comboBox.addItem(genero_5);
+		comboBox.addItem(genero_6);
 
 	}
 	
 	private void generos() {
 		
-		genero_1 = new Genero_pelicula("Terror");
-		genero_2 = new Genero_pelicula("Accion");
-		genero_3 = new Genero_pelicula("Suspenso");
-		genero_4 = new Genero_pelicula("Romantica");
-		genero_5 = new Genero_pelicula("Thriller");
+		genero_1 = new Genero_pelicula("Seleccione un genero");
+		genero_2 = new Genero_pelicula("Terror");
+		genero_3 = new Genero_pelicula("Accion");
+		genero_4 = new Genero_pelicula("Suspenso");
+		genero_5 = new Genero_pelicula("Romantica");
+		genero_6 = new Genero_pelicula("Thriller");
 		
+	}
+	
+	public void setDefaultListModel(DefaultListModel<Genero_pelicula> listModelRecibido)
+	{
+		this.listModel = listModelRecibido;
 	}
 	
 }
