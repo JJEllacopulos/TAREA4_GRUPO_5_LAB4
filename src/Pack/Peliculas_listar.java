@@ -10,8 +10,8 @@ import javax.swing.JList;
 
 public class Peliculas_listar extends JPanel {
 	
-private  JList<Genero_pelicula> list;
-private  DefaultListModel<Genero_pelicula> dlModel;
+private  JList<Peliculas> list;
+private  DefaultListModel<Peliculas> dlModel;
 	
 	public Peliculas_listar() {
 		setLayout(null);
@@ -20,13 +20,13 @@ private  DefaultListModel<Genero_pelicula> dlModel;
 		lblNewLabel.setBounds(10, 92, 46, 14);
 		add(lblNewLabel);
 		
-		 list = new JList<Genero_pelicula>();
+		 list = new JList<Peliculas>();
 		list.setBounds(90, 24, 277, 173);
  
 		add(list);
 
 	}
-	public void setDefaultListModel(DefaultListModel<Genero_pelicula> listModel2)
+	public void setDefaultListModel(DefaultListModel<Peliculas> listModel2)
 	{
 		this.dlModel = listModel2;
 		list.setModel(this.dlModel);

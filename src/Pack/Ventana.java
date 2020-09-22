@@ -20,7 +20,7 @@ import java.awt.event.ActionEvent;
 public class Ventana extends JFrame {
 	
 	private JPanel contentPane;
-	private  DefaultListModel<Genero_pelicula> listModel;
+	private  DefaultListModel<Peliculas> listModel;
 	
 	public Ventana() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

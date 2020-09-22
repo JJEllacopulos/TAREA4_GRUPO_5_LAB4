@@ -5,9 +5,11 @@ import java.awt.EventQueue;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 public class Principal extends JFrame {
+	public Principal() {
+	}
 	
 	Ventana frame;
-	private static DefaultListModel<Genero_pelicula> listModel;
+	public static DefaultListModel<Peliculas> listModel = new DefaultListModel<Peliculas>();
 	
 	
 	
@@ -16,7 +18,7 @@ public class Principal extends JFrame {
 			public void run() {
 				try {
 					Ventana frame = new Ventana();
-					listModel=new DefaultListModel<Genero_pelicula>();
+					listModel=new DefaultListModel<Peliculas>();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
