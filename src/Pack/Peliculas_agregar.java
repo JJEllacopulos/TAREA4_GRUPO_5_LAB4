@@ -16,7 +16,7 @@ public class Peliculas_agregar extends JPanel {
 	
 	private JTextField textField;
 	private  DefaultListModel<Peliculas> listModel;
-	private JComboBox comboBox;
+	private JComboBox<Categorias> comboBox;
 
 
 	Peliculas peliculas = new Peliculas();
@@ -58,7 +58,9 @@ public class Peliculas_agregar extends JPanel {
 					Peliculas pelicula = new Peliculas();
 					pelicula.setNombre(textField.getText());
 					pelicula.setCategorias(comboBox.getSelectedItem());
+										
 					listModel.addElement(pelicula);
+					setDefaultListModel(listModel);
 					textField.setText("");
 				}
 				else {

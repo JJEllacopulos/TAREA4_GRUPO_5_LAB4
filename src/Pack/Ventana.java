@@ -7,6 +7,7 @@ import java.awt.EventQueue;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.ListModel;
 import javax.swing.border.EmptyBorder;
@@ -20,9 +21,12 @@ import java.awt.event.ActionEvent;
 public class Ventana extends JFrame {
 	
 	private JPanel contentPane;
+	
 	private  DefaultListModel<Peliculas> listModel;
 	
+	
 	public Ventana() {
+		listModel = new DefaultListModel<Peliculas>();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
@@ -38,15 +42,12 @@ public class Ventana extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				contentPane.removeAll();
-				
+			
 				Peliculas_agregar pan_agregar = new Peliculas_agregar();
 				pan_agregar.setDefaultListModel(listModel);
 				contentPane.add(pan_agregar);
 				contentPane.repaint();
 				contentPane.revalidate();
-				
-				
-				
 			}
 		});
 		
@@ -56,9 +57,10 @@ public class Ventana extends JFrame {
 		mntmListar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+
 				contentPane.removeAll();
 				Peliculas_listar panel = new Peliculas_listar();
-				
+				panel.setDefaultListModel(listModel);
 				contentPane.add(panel);
 				contentPane.repaint();
 				contentPane.revalidate();

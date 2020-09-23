@@ -22,6 +22,7 @@ private  DefaultListModel<Peliculas> dlModel;
 		
 		 list = new JList<Peliculas>();
 		list.setBounds(90, 24, 277, 173);
+
  
 		add(list);
 

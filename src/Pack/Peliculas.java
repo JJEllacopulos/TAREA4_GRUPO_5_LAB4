@@ -40,6 +40,11 @@ public class Peliculas {
 	public void setCategorias(Object object) {
 		this.categorias = (Categorias) object;
 	}
+
+	@Override
+	public String toString() {
+		return id+"- " + nombre+ " "+categorias.getNombre();
+	}
 	
 	
 }

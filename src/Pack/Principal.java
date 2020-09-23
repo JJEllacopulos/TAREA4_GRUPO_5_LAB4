@@ -9,7 +9,7 @@ public class Principal extends JFrame {
 	}
 	
 	Ventana frame;
-	public static DefaultListModel<Peliculas> listModel = new DefaultListModel<Peliculas>();
+
 	
 	
 	
@@ -18,7 +18,7 @@ public class Principal extends JFrame {
 			public void run() {
 				try {
 					Ventana frame = new Ventana();
-					listModel=new DefaultListModel<Peliculas>();
+				
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
